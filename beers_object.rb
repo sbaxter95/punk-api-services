@@ -18,11 +18,11 @@ class BeerServices
   end
 
   def all_beers_service
-
+    JSON.parse(self.class.get("/beers").body)
   end
 
   def random_beer_service
-
+    JSON.parse(self.class.get("/beers/random").body)
   end
 
   def check_for_params(hash)
@@ -54,11 +54,13 @@ class BeerServices
   def search_beers
     JSON.parse(self.class.get("/beers#{@url}").body)
   end
-  
+
 end
 
 beer = BeerServices.new
 # p beer.single_beer_service('5')
 beer.check_for_params({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})
 beer.add_params_to_url
-p beer.search_beers
+beer.search_beers
+beer.all_beers_service
+beer.random_beer_service
