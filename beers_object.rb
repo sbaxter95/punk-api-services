@@ -58,7 +58,7 @@ class BeerServices
 end
 
 beer = BeerServices.new
-# p beer.single_beer_service('5')
+beer.single_beer_service('5')
 beer.check_for_params({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})
 beer.add_params_to_url
 beer.search_beers
