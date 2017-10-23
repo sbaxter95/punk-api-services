@@ -61,6 +61,6 @@ beer = BeerServices.new
 beer.single_beer_service('5')
 beer.check_for_params({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})
 beer.add_params_to_url
-beer.search_beers
+p beer.search_beers
 beer.all_beers_service
 beer.random_beer_service
