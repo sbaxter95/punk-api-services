@@ -26,6 +26,8 @@ class BeerServices
     hash.each do |k,v|
       if @params_array.include?(k)
         puts v
+      else
+        raise 'No matches'
       end
     end
   end
@@ -34,4 +36,4 @@ end
 
 beer = BeerServices.new
 # p beer.single_beer_service('5')
-p beer.query_beers_service('yeast' => 'test')
+p beer.query_beers_service('bob' => 'test')
