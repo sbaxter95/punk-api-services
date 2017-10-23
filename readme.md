@@ -22,10 +22,19 @@ beer.check_for_params({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})
 beer.add_params_to_url
 beer.search_beers
 ```
+![Parameter Tables](parameter_tables.png)
+
 * The ```check_for_params``` method is the method in which the user can enter search paramaters as a **hash**
 * Please note that curly brackets **'{}'** are required, as well as the older 'hash rocket' notation **'=>'**
 
 ## Methods
+
+#### single\_beer\_service 
+
+* Method for returning a single beer
+* Has 1 argument - beer_id, which is the id of the beer you want to find
+* **Note** - not to be confused with the search parameter **ids**
+* It is also important to enter the number of the id in quotes - e.g. ```beer.single_beer_service('5')```
 
 ## Testing
 
