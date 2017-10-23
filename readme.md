@@ -91,8 +91,8 @@ end
 
 ## Technologies
 
-* Ruby 2.4.2
-* rspec 3.1.2
-* httparty gem 0.15.6
-* json gem 1.8.3
-* git for version control 2.14.2
+* Ruby **2.4.2**
+* rspec **3.1.2**
+* httparty gem **0.15.6**
+* json gem **1.8.3**
+* git for version control **2.14.2**
