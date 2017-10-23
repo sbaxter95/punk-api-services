@@ -34,8 +34,6 @@ class BeerServices
         raise 'No matches'
       end
     end
-    @k_array
-    @v_array
   end
 
   def add_params_to_url

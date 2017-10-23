@@ -23,6 +23,7 @@ beer.add_params_to_url
 beer.search_beers
 ```
 ![Parameter Tables](parameter_tables.png)
+**Table 1**
 
 * The ```check_for_params``` method is the method in which the user can enter search paramaters as a **hash**
 * Please note that curly brackets **'{}'** are required, as well as the older 'hash rocket' notation **'=>'**
@@ -35,6 +36,41 @@ beer.search_beers
 * Has 1 argument - beer_id, which is the id of the beer you want to find
 * **Note** - not to be confused with the search parameter **ids**
 * It is also important to enter the number of the id in quotes - e.g. ```beer.single_beer_service('5')```
+
+#### all\_beers\_service
+
+* Method for returning all of the beers
+* No arguments for this method
+* Add ```beer.all_beers_service``` to code
+
+#### random\_beer\_service
+
+* Method for returning a random single beer
+* No arguments for this method
+* Add ```beer.random_beer_service``` to code
+
+#### check\_for\_params
+
+* Method that compares user entered paramaters to an array of possible parameters listed in **Table 1**
+* Number of arguments depends on the user
+* User will enter a **hash** - method will then compare each key to the items in the array
+* If there is no match, an error is raised
+* If there is a match, the key :value pairs are pushed into a key and value array respectively
+* Example code: ```beer.check_for_params({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})```
+
+#### add\_params\_to\_url
+
+* Method runs after the check\_for\_params method
+* Purpose is to construct an appropiate query url/uri
+* First checks if the key and value arrays have anything in them, if there is only 1 thing in them, then a question mark is added to the beginning of the url
+* Next, the first value of the key array is added, then an equals sign, then the first value of the value array is added
+* If there is more than one value, the first value of the key and value arrays are added as above, except there is a for loop that loops through the key array, adding keys and values to the url, except with an '&' at the beginning
+
+#### search_beers 
+
+* Final method for query parameters
+* Parses the JSON and appends the dynamically generated url to the base_uri
+* No arguments
 
 ## Testing
 
@@ -55,8 +91,8 @@ end
 
 ## Technologies
 
-* Ruby
-* rspec
-* httparty gem
-* json gem
-* git for version control
+* Ruby 2.4.2
+* rspec 3.1.2
+* httparty gem 0.15.6
+* json gem 1.8.3
+* git for version control 2.14.2
