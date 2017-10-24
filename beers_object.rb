@@ -58,6 +58,3 @@ class BeerServices
   end
 
 end
-
-beer = BeerServices.new
-p beer.random_beer_service

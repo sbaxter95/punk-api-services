@@ -141,6 +141,11 @@ describe 'testing beer api' do
       expect(beer.length).to eq 1
     end
 
+    it 'should return an array' do
+      beer = @beer_random.random_beer_service
+      expect(beer).to be_kind_of(Array)
+    end
+
   end
 
 end
