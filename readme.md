@@ -91,7 +91,8 @@ end
 ```
 * Create a file in the spec directory where tests will be run - it can be called anything, but **must** have \_spec.rb at the end  - in this case, the name of the file is beer_spec.rb
 * To run the tests, run the ```rspec``` command
-* Initially, all tests should pass
+* Initially, all tests should pass, which means that they will all be green
+* If any tests fail, they will be red
 
 ## Technologies
 

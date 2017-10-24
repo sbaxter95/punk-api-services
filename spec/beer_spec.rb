@@ -146,6 +146,12 @@ describe 'testing beer api' do
       expect(beer).to be_kind_of(Array)
     end
 
+    it 'should have an interger id and string name' do
+      beer = @beer_random.random_beer_service
+      expect(beer[0]['id']).to be_kind_of(Integer)
+      expect(beer[0]['name']).to be_kind_of(String)
+    end
+
   end
 
 end
