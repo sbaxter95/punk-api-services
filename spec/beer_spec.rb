@@ -10,8 +10,16 @@ describe 'testing beer api' do
 
   context 'single beer' do
 
-    it "should be a string passed into the single beer method" do
+    it "should have an id thats an integer" do
       expect(@beer[0]['id']).to be_kind_of(Integer)
+    end
+
+    it 'should return an array' do
+      expect(@beer).to be_kind_of(Array)
+    end
+
+    it 'should have a name that is a string' do
+      expect(@beer[0]['name']).to be_kind_of(String)
     end
 
   end
