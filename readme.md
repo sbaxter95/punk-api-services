@@ -5,6 +5,9 @@ Service Object Models for the [Punk API](https://punkapi.com/documentation/v2)
 ## Installation
 
 * Clone or download the files from the git repo 
+* If httparty is not installed, run ```gem install httparty```
+* If the json gem is not installed, run ```gem install json```
+* If rpsec is not installed, run ```gwm install rspec```
 * Use the ```ruby beers_object.rb``` command in the terminal (or using the bash shell in Windows) to run the ruby script
 * Modify the beers_object.rb file as directed below for services, or follow instructions for testing below
 
@@ -88,6 +91,7 @@ end
 ```
 * Create a file in the spec directory where tests will be run - it can be called anything, but **must** have \_spec.rb at the end  - in this case, the name of the file is beer_spec.rb
 * To run the tests, run the ```rspec``` command
+* Initially, all tests should pass
 
 ## Technologies
 

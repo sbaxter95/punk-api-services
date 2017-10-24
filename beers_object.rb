@@ -6,6 +6,8 @@ class BeerServices
 
   base_uri 'https://api.punkapi.com/v2/'
 
+  attr_accessor :url, :k_array, :v_array, :params_array
+
   def initialize
     @params_array = %w(abv_gt abv_lt ibu_gt ibu_lt ebc_gt ebc_lt beer_name yeast brewed_before brewed_after hops malt food ids)
     @k_array = []
@@ -49,16 +51,10 @@ class BeerServices
     end
   end
 
-  def search_beers
+  def search_beers(query_params)
+    self.check_for_params(query_params)
+    self.add_params_to_url
     JSON.parse(self.class.get("/beers#{@url}").body)
   end
 
 end
-
-beer = BeerServices.new
-beer.single_beer_service('5')
-beer.check_for_params({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})
-beer.add_params_to_url
-beer.search_beers
-beer.all_beers_service
-beer.random_beer_service
