@@ -60,4 +60,4 @@ class BeerServices
 end
 
 beer = BeerServices.new
-beer.single_beer_service('5')
+p beer.random_beer_service

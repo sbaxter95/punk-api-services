@@ -9,6 +9,7 @@ describe 'testing beer api' do
       @beer_function_check = BeerServices.new
       @beer_params_check = BeerServices.new
       @beer_params_check.search_beers({'yeast' => 'Wyeast_1056_-_American_Ale', 'abv_gt' => 8})
+      @beer_random = BeerServices.new
     end
 
   context 'single beer' do
@@ -32,10 +33,6 @@ describe 'testing beer api' do
     it 'should have an ibu that is an integer' do
       expect(@beer[0]['ibu']).to be_kind_of(Integer)
     end
-
-    # it 'should have an ebc that is an integer' do
-    #   expect(@beer[0]['ebc']).to be_kind_of(Integer)
-    # end
 
     it 'should have a yeast that is a string' do
       expect(@beer[0]['ingredients']['yeast']).to be_kind_of(String)
@@ -89,10 +86,6 @@ describe 'testing beer api' do
       expect(@beer[0]['ibu']).to be_kind_of(Integer)
     end
 
-    # it 'should have an ebc that is an integer' do
-    #   expect(@beer[0]['ebc']).to be_kind_of(Integer)
-    # end
-
     it 'should have a yeast that is a string' do
       expect(@beer[0]['ingredients']['yeast']).to be_kind_of(String)
     end
@@ -131,6 +124,21 @@ describe 'testing beer api' do
 
     it 'should ensure that there is a question mark in the url' do
       expect(@beer_params_check.url).to include('?')
+    end
+
+    it 'should ensure that there are ampersands if relevant' do
+      if @beer_params_check.k_array.length > 1
+        expect(@beer_params_check.url).to include('&')
+      end
+    end
+
+  end
+
+  context 'testing random service' do
+
+    it 'should return 1 beer' do
+      beer = @beer_random.random_beer_service
+      expect(beer.length).to eq 1
     end
 
   end
