@@ -54,6 +54,10 @@ describe 'testing beer api' do
       expect(@beer[0]['food_pairing']).to be_kind_of(Array)
     end
 
+    it 'should have a beer that is returned' do
+      expect(@beer[0]).not_to be_empty
+    end
+
   end
 
 end
